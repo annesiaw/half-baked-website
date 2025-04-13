@@ -110,24 +110,37 @@ async function handleOrderSubmit(event) {
     });
 
     // Process cookies
+    const pecanQty = parseInt(formData.get('pecan_qty'));
+    const chocolateQty = parseInt(formData.get('chocolate_qty'));
     const singleQty = parseInt(formData.get('single_qty'));
     const doubleQty = parseInt(formData.get('double_qty'));
     
-    if (singleQty > 0) {
+    if (pecanQty > 0) {
         orderData.items.push({
             type: 'cookies',
-            size: 'single',
-            quantity: singleQty,
-            price: 3
+            flavor: 'pecan',
+            quantity: pecanQty,
+            price: singleQty > 0 ? 3 : 5
         });
     }
     
-    if (doubleQty > 0) {
+    if (chocolateQty > 0) {
         orderData.items.push({
             type: 'cookies',
-            size: 'double',
-            quantity: doubleQty,
-            price: 5
+            flavor: 'chocolate',
+            quantity: chocolateQty,
+            price: singleQty > 0 ? 3 : 5
+        });
+    }
+
+    // Process brownies
+    const brownieQty = parseInt(formData.get('brownie_qty'));
+    if (brownieQty > 0) {
+        orderData.items.push({
+            type: 'brownies',
+            flavor: 'luvme',
+            quantity: brownieQty,
+            price: 7
         });
     }
 
