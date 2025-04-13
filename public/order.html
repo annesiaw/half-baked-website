@@ -8,6 +8,147 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        #order-form {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .form-group {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .form-group h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .menu-selection {
+            background: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .menu-selection h4 {
+            color: #5D4037;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .item-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+
+        .item-option label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .item-option input[type="checkbox"] {
+            margin: 0;
+            width: 18px;
+            height: 18px;
+        }
+
+        .item-option span {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .quantity-options {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+
+        .quantity-options input[type="number"] {
+            width: 60px;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .quantity-label {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .menu-selection::before {
+            content: "Enter quantity in boxes to the right";
+            position: absolute;
+            top: -25px;
+            right: 0;
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .pickup-info {
+            background: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .pickup-info h4 {
+            color: #1976D2;
+            margin-bottom: 0.5rem;
+        }
+
+        .submit-order {
+            background: #8B4513;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .submit-order:hover {
+            background: #A0522D;
+        }
+
+        .cookie-pricing {
+            color: #5D4037;
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,7 +174,6 @@
                 <input type="text" id="name" name="name" placeholder="Full Name" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                <textarea id="address" name="address" placeholder="Delivery Address" required></textarea>
             </div>
 
             <div class="form-group">
@@ -42,71 +182,68 @@
                     <h4>Cheesecake Bites ($10 each)</h4>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cheesecake" value="strawberry"> Strawberry Crunch
-                            <input type="number" name="strawberry_qty" min="0" max="10" value="0">
+                            <input type="checkbox" name="cheesecake" value="strawberry">
+                            <span>Strawberry Crunch</span>
                         </label>
+                        <input type="number" name="strawberry_qty" min="0" max="10" value="0" title="Enter number of slices">
                     </div>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cheesecake" value="peach"> Peach Cobbler
-                            <input type="number" name="peach_qty" min="0" max="10" value="0">
+                            <input type="checkbox" name="cheesecake" value="peach">
+                            <span>Peach Cobbler</span>
                         </label>
+                        <input type="number" name="peach_qty" min="0" max="10" value="0">
                     </div>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cheesecake" value="cookies"> Cookies'n'Cream
-                            <input type="number" name="cookies_qty" min="0" max="10" value="0">
+                            <input type="checkbox" name="cheesecake" value="cookies">
+                            <span>Cookies'n'Cream</span>
                         </label>
+                        <input type="number" name="cookies_qty" min="0" max="10" value="0">
                     </div>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cheesecake" value="brownie"> Brownie
-                            <input type="number" name="brownie_qty" min="0" max="10" value="0">
+                            <input type="checkbox" name="cheesecake" value="brownie">
+                            <span>Brownie</span>
                         </label>
+                        <input type="number" name="brownie_qty" min="0" max="10" value="0">
                     </div>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cheesecake" value="newyork"> New York
-                            <input type="number" name="newyork_qty" min="0" max="10" value="0">
+                            <input type="checkbox" name="cheesecake" value="newyork">
+                            <span>New York</span>
                         </label>
+                        <input type="number" name="newyork_qty" min="0" max="10" value="0">
                     </div>
                 </div>
 
                 <div class="menu-selection">
                     <h4>Cookies</h4>
+                    <p class="cookie-pricing">1 for $3 or 2 for $5</p>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cookies" value="pecan"> Pecan Delight
-                            <input type="number" name="pecan_qty" min="0" max="20" value="0">
+                            <input type="checkbox" name="cookies" value="pecan">
+                            <span>Pecan Delight</span>
                         </label>
+                        <input type="number" name="pecan_qty" min="0" max="20" value="0" title="Enter number of cookies">
                     </div>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cookies" value="chocolate"> Double Chocolate Chip
-                            <input type="number" name="chocolate_qty" min="0" max="20" value="0">
+                            <input type="checkbox" name="cookies" value="chocolate">
+                            <span>Double Chocolate Chip</span>
                         </label>
-                    </div>
-                    <div class="item-option">
-                        <label>
-                            <input type="checkbox" name="cookies" value="single"> Single Cookie ($3)
-                            <input type="number" name="single_qty" min="0" max="20" value="0">
-                        </label>
-                    </div>
-                    <div class="item-option">
-                        <label>
-                            <input type="checkbox" name="cookies" value="double"> Two Cookies ($5)
-                            <input type="number" name="double_qty" min="0" max="10" value="0">
-                        </label>
+                        <input type="number" name="chocolate_qty" min="0" max="20" value="0" title="Enter number of cookies">
                     </div>
                 </div>
 
                 <div class="menu-selection">
-                    <h4>Luv Me Brownies ($7 each)</h4>
+                    <h4>Brownies ($7 each)</h4>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="brownies" value="luvme"> Luv Me Brownie
-                            <input type="number" name="brownie_qty" min="0" max="10" value="0">
+                            <input type="checkbox" name="brownies" value="brownie">
+                            <span>Classic Brownie</span>
                         </label>
+                        <input type="number" name="brownie_qty" min="0" max="10" value="0">
                     </div>
                 </div>
 
@@ -114,22 +251,31 @@
                     <h4>Cobblers ($10 each)</h4>
                     <div class="item-option">
                         <label>
-                            <input type="checkbox" name="cobbler" value="peach"> Peach Cobbler
-                            <input type="number" name="peach_cobbler_qty" min="0" max="5" value="0">
+                            <input type="checkbox" name="cobbler" value="peach">
+                            <span>Peach Cobbler</span>
                         </label>
+                        <input type="number" name="peach_cobbler_qty" min="0" max="5" value="0">
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <h3>Delivery Information</h3>
-                <label for="deliveryDate">Preferred Delivery Date:</label>
-                <input type="date" id="deliveryDate" name="deliveryDate" required>
+                <h3>Pickup Information</h3>
+                <div class="pickup-info">
+                    <h4>Pickup Location</h4>
+                    <p>123 Sweet Street, Dessert City</p>
+                    <h4>Pickup Hours</h4>
+                    <p>Monday - Saturday: 10:00 AM - 6:00 PM</p>
+                    <p>Sunday: Closed</p>
+                    <p class="note">Note: Orders must be placed at least 30 minutes before pickup time</p>
+                </div>
+                <label for="pickupDate">Preferred Pickup Date:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
                 
-                <label for="deliveryTime">Preferred Delivery Time:</label>
-                <input type="time" id="deliveryTime" name="deliveryTime" required>
+                <label for="pickupTime">Preferred Pickup Time:</label>
+                <input type="time" id="pickupTime" name="pickupTime" min="10:00" max="18:00" required>
                 
-                <textarea id="specialInstructions" name="specialInstructions" placeholder="Special Instructions"></textarea>
+                <textarea id="specialInstructions" name="specialInstructions" placeholder="Special Instructions (e.g., allergies, gift message)"></textarea>
             </div>
 
             <div class="form-group">
@@ -162,6 +308,52 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pickupDate = document.getElementById('pickupDate');
+            const pickupTime = document.getElementById('pickupTime');
+            const form = document.getElementById('orderForm');
+
+            // Set minimum date to today
+            const today = new Date();
+            const minDate = today.toISOString().split('T')[0];
+            pickupDate.min = minDate;
+
+            // Disable Sundays
+            pickupDate.addEventListener('change', function() {
+                const selectedDate = new Date(this.value);
+                if (selectedDate.getDay() === 0) { // Sunday
+                    alert('Sorry, we are closed on Sundays. Please select another day.');
+                    this.value = '';
+                }
+            });
+
+            // Validate pickup time
+            form.addEventListener('submit', function(e) {
+                const selectedDate = new Date(pickupDate.value);
+                const selectedTime = pickupTime.value.split(':');
+                const pickupDateTime = new Date(selectedDate);
+                pickupDateTime.setHours(parseInt(selectedTime[0]), parseInt(selectedTime[1]));
+
+                // Add 30 minutes to current time for minimum pickup time
+                const minPickupTime = new Date();
+                minPickupTime.setMinutes(minPickupTime.getMinutes() + 30);
+
+                if (pickupDateTime < minPickupTime) {
+                    e.preventDefault();
+                    alert('Please select a pickup time at least 30 minutes from now.');
+                    return false;
+                }
+
+                // Check if time is within business hours
+                const hours = parseInt(selectedTime[0]);
+                if (hours < 10 || hours >= 18) {
+                    e.preventDefault();
+                    alert('Please select a time between 10:00 AM and 6:00 PM.');
+                    return false;
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
