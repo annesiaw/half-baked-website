@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="flavor-options">
-                        <h4>Whole Slices ($10 each)</h4>
+                        <h4>Whole Slice ($10 each)</h4>
                         <ul class="flavor-list">
                             <li>
                                 <span class="flavor-name">New York</span>
@@ -120,12 +120,20 @@
                 </div>
             </div>
             <div class="menu-item">
-                <img src="images/products/brownies.jpg" alt="Luv Me Brownies">
-                <div class="menu-item-content">
-                    <h3>Luv Me Brownies</h3>
-                    <p>Rich, fudgy brownies made with love</p>
-                    <p class="price">$7 each</p>
-                </div>
+                <div class="brownie-placeholder"></div>
+                <h3>Brownies</h3>
+                <p>Classic chocolate brownies with a fudgy center and crispy edges.</p>
+                <p class="price">$3.50 each</p>
+                <button onclick="addToCart('Brownie', 3.50)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/products/cheesecake.jpg" alt="Cheesecake">
+                <h3>Cheesecake</h3>
+                <p>Rich and creamy New York style cheesecake with a graham cracker crust.</p>
+                <p class="price">$5.00 per slice</p>
+                <p class="price">$45.00 per Whole Slice</p>
+                <button onclick="addToCart('Cheesecake Slice', 5.00)">Add Slice to Cart</button>
+                <button onclick="addToCart('Whole Cheesecake', 45.00)">Add Whole Slice to Cart</button>
             </div>
         </div>
     </section>
