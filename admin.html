@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Half Baked</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo/logo.png" alt="Half Baked Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">View Site</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="admin-dashboard">
+        <h2>Admin Dashboard</h2>
+        
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Today's Orders</h3>
+                <p id="todayOrders">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Orders</h3>
+                <p id="pendingOrders">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Completed Orders</h3>
+                <p id="completedOrders">0</p>
+            </div>
+        </div>
+
+        <div class="orders-section">
+            <h3>Recent Orders</h3>
+            <div class="order-filters">
+                <select id="statusFilter">
+                    <option value="all">All Statuses</option>
+                    <option value="pending">Pending</option>
+                    <option value="processing">Processing</option>
+                    <option value="preparing">Preparing</option>
+                    <option value="ready">Ready for Delivery</option>
+                    <option value="delivered">Delivered</option>
+                </select>
+                <input type="date" id="dateFilter">
+                <button id="refreshOrders">Refresh</button>
+            </div>
+
+            <div class="orders-list">
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Orders will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="inventory-section">
+            <h3>Inventory Management</h3>
+            <div class="inventory-grid">
+                <div class="inventory-item">
+                    <h4>Cheesecake Bites</h4>
+                    <div class="stock-level">
+                        <span>Current Stock:</span>
+                        <input type="number" id="cheesecakeStock" value="0">
+                        <button class="update-stock">Update</button>
+                    </div>
+                </div>
+                <div class="inventory-item">
+                    <h4>Cookies</h4>
+                    <div class="stock-level">
+                        <span>Current Stock:</span>
+                        <input type="number" id="cookiesStock" value="0">
+                        <button class="update-stock">Update</button>
+                    </div>
+                </div>
+                <div class="inventory-item">
+                    <h4>Cobblers</h4>
+                    <div class="stock-level">
+                        <span>Current Stock:</span>
+                        <input type="number" id="cobblersStock" value="0">
+                        <button class="update-stock">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy; 2024 Half Baked. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

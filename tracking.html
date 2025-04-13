@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - Half Baked</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo/logo.png" alt="Half Baked Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="order.html">Order Now</a></li>
+                <li><a href="tracking.html">Track Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="track-order">
+        <h2>Track Your Order</h2>
+        <div class="tracking-form">
+            <form id="trackingForm">
+                <div class="form-group">
+                    <input type="text" id="orderId" name="orderId" placeholder="Enter Order ID" required>
+                    <input type="email" id="trackingEmail" name="trackingEmail" placeholder="Enter Email" required>
+                    <button type="submit" class="track-button">Track Order</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="orderStatus" class="order-status hidden">
+            <div class="status-timeline">
+                <div class="status-step" id="step1">
+                    <div class="step-icon">✓</div>
+                    <div class="step-label">Order Received</div>
+                </div>
+                <div class="status-step" id="step2">
+                    <div class="step-icon">✓</div>
+                    <div class="step-label">Processing</div>
+                </div>
+                <div class="status-step" id="step3">
+                    <div class="step-icon">✓</div>
+                    <div class="step-label">Preparing</div>
+                </div>
+                <div class="status-step" id="step4">
+                    <div class="step-icon">✓</div>
+                    <div class="step-label">Ready for Delivery</div>
+                </div>
+                <div class="status-step" id="step5">
+                    <div class="step-icon">✓</div>
+                    <div class="step-label">Delivered</div>
+                </div>
+            </div>
+
+            <div class="order-details">
+                <h3>Order Details</h3>
+                <div id="orderItems"></div>
+                <div class="delivery-info">
+                    <h4>Delivery Information</h4>
+                    <p id="deliveryAddress"></p>
+                    <p id="deliveryTime"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info@halfbaked.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Address: 123 Sweet Street, Dessert City</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Half Baked. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
