@@ -20,6 +20,7 @@
                 <li><a href="#orders">Orders</a></li>
                 <li><a href="#inventory">Inventory</a></li>
                 <li><a href="#reports">Reports</a></li>
+                <li><a href="#club">Club</a></li>
             </ul>
         </nav>
     </header>
@@ -105,6 +106,51 @@
                 </div>
             </div>
         </div>
+
+        <div id="club" class="club-admin-section">
+            <h3>Half Baked Club</h3>
+
+            <div class="club-admin-card">
+                <h4>Invite Someone Directly</h4>
+                <p>Invites you send are automatically approved once the person completes their signup.</p>
+                <form id="createInviteForm">
+                    <input type="text" id="inviteName" placeholder="Their Name" required>
+                    <input type="text" id="inviteContact" placeholder="Their Email or Phone" required>
+                    <button type="submit" class="submit-order">Create Invite</button>
+                </form>
+                <div id="createInviteResult" class="confirmation-box hidden"></div>
+            </div>
+
+            <div class="club-admin-card">
+                <h4>Pending Approvals</h4>
+                <p>These signups came from a member's invite and need your review.</p>
+                <div id="pendingList"></div>
+            </div>
+
+            <div class="club-admin-card">
+                <h4>Activity Feed</h4>
+                <p>A glance at everyone who's joined, including auto-approved direct invites.</p>
+                <div id="activityList"></div>
+            </div>
+
+            <div class="club-admin-card">
+                <h4>All Members</h4>
+                <table id="clubMembersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                            <th>Favorite Food</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clubMembersTableBody"></tbody>
+                </table>
+            </div>
+
+            <button id="refreshClub">Refresh Club Data</button>
+        </div>
     </section>
 
     <footer>
@@ -116,5 +162,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="admin-club.js"></script>
 </body>
 </html> 

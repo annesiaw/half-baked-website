@@ -3,6 +3,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const clubRoutes = require('./lib/club-routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,6 +12,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use('/api/club', clubRoutes);
+
+// admin.html and tracking.html live at the repo root (kept there for the
+// GitHub Pages deployment), so serve just those two explicitly.
+app.get('/admin.html', (req, res) => res.sendFile(path.join(__dirname, 'admin.html')));
+app.get('/tracking.html', (req, res) => res.sendFile(path.join(__dirname, 'tracking.html')));
 
 // File paths
 const ORDERS_FILE = path.join(__dirname, 'data', 'orders.json');

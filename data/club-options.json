@@ -1,0 +1,6 @@
+{
+  "categories": ["Entrees", "Sides", "Soups", "Baked Goods", "Desserts", "Drinks"],
+  "exclusions": ["Pork", "Beef", "Poultry", "Shellfish", "Vegetarian only", "Vegan only"],
+  "allergies": ["Peanuts", "Tree Nuts", "Dairy", "Gluten", "Shellfish", "Eggs", "Soy"],
+  "channels": ["email", "sms", "push"]
+}

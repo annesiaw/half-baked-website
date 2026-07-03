@@ -611,7 +611,154 @@ footer {
     background: #45a049;
 }
 
+/* Club Styles */
+.club-hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.club-hero h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+}
+
+.club-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.club-card {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.club-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.club-status-message {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    text-align: center;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f9f9f9;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.checkbox-option input {
+    width: auto;
+    margin: 0;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.confirmation-box {
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.confirmation-box a {
+    word-break: break-all;
+    color: var(--primary-color);
+}
+
+.saved-message {
+    color: #2e7d32;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.club-nav-cta {
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+/* Admin Club Section */
+.club-admin-section {
+    margin-top: 2rem;
+}
+
+.club-admin-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.club-admin-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.activity-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid #ddd;
+}
+
+.activity-item.unread {
+    border-left: 3px solid var(--primary-color);
+    background: #eef6f5;
+}
+
+#clubMembersTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#clubMembersTable th,
+#clubMembersTable td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#clubMembersTable th {
+    background: #f9f9f9;
+    font-weight: 600;
+}
+
 /* Utility Classes */
 .hidden {
     display: none;
-} 
+}
