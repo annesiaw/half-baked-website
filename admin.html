@@ -128,6 +128,32 @@
             </div>
 
             <div class="club-admin-card">
+                <h4>Send an Announcement</h4>
+                <p>Only approved members interested in a matching category, and not blocked by an allergy or exclusion tag you set below, will be emailed.</p>
+                <form id="sendAnnouncementForm">
+                    <input type="text" id="announceTitle" placeholder="Title (used as the email subject)" required>
+                    <textarea id="announceBody" placeholder="What's ready?" required></textarea>
+
+                    <h5>Categories (who's interested)</h5>
+                    <div id="announceCategories" class="checkbox-grid"></div>
+
+                    <h5>Contains an allergen (blocks matching allergies)</h5>
+                    <div id="announceAllergies" class="checkbox-grid"></div>
+
+                    <h5>Contains (blocks matching exclusions)</h5>
+                    <div id="announceExclusions" class="checkbox-grid"></div>
+
+                    <button type="submit" class="submit-order">Send Announcement</button>
+                </form>
+                <div id="announcementResult" class="confirmation-box hidden"></div>
+            </div>
+
+            <div class="club-admin-card">
+                <h4>Announcement History</h4>
+                <div id="announcementHistory"></div>
+            </div>
+
+            <div class="club-admin-card">
                 <h4>Activity Feed</h4>
                 <p>A glance at everyone who's joined, including auto-approved direct invites.</p>
                 <div id="activityList"></div>
